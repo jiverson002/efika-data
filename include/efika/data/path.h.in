@@ -1,0 +1,12 @@
+/* SPDX-License-Identifier: MIT */
+#ifndef EFIKA_DATA_CONFIG_H
+#define EFIKA_DATA_CONFIG_H 1
+
+#cmakedefine EFIKA_DATA_PATH "@EFIKA_DATA_PATH@"
+
+static char const *datasets[] = {
+  "16384.5d",
+  "65536.5d",
+};
+
+#endif /* EFIKA_DATA_CONFIG_H */
