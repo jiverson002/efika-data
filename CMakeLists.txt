@@ -1,20 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
 #-------------------------------------------------------------------------------
-# BOOTSTRAP w/ latest bootstrap/cmake scripts
+# BOOTSTRAP
 #-------------------------------------------------------------------------------
-include(FetchContent)
-FetchContent_Declare(cmake
-  GIT_REPOSITORY git@github.com:jiverson002/bootstrap-cmake.git
-)
-FetchContent_MakeAvailable(cmake)
-
-#-------------------------------------------------------------------------------
-# Import dependencies (needed to ensure that target efika is known)
-#-------------------------------------------------------------------------------
-set(core_GIT_REPOSITORY git@github.com/jiverson002/efika-core.git)
-
-import(core)
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/Bootstrap.cmake)
 
 #-------------------------------------------------------------------------------
 # SUBPROJECT configuration
