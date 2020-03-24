@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.13)
 
 #-------------------------------------------------------------------------------
 # BOOTSTRAP
@@ -17,15 +17,15 @@ cmake_policy(SET CMP0079 NEW)
 #-------------------------------------------------------------------------------
 add_library(${PROJECT_NAME} INTERFACE)
 
+target_link_libraries(${BS_PROJECT_NAME} INTERFACE ${PROJECT_NAME})
+
 target_include_directories(${PROJECT_NAME} INTERFACE
   $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include>
 )
-
-target_link_libraries(${BS_PROJECT_NAME} INTERFACE ${PROJECT_NAME})
 
 #-------------------------------------------------------------------------------
 # Set data path
 #-------------------------------------------------------------------------------
 set(EFIKA_DATA_PATH ${PROJECT_SOURCE_DIR})
 
-configure_file(include/efika/data/path.h.in include/efika/data/path.h @ONLY)
+configure_file(include/efika/data.h.in include/efika/data.h @ONLY)
