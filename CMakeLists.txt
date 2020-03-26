@@ -1,27 +1,17 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required( VERSION 3.10 )
+
+# Subproject of efika
+project( efika-data LANGUAGES NONE )
 
 #-------------------------------------------------------------------------------
-# BOOTSTRAP
+# COMPONENT configuration
 #-------------------------------------------------------------------------------
-include(${CMAKE_CURRENT_LIST_DIR}/cmake/Bootstrap.cmake)
+add_library( ${PROJECT_NAME} INTERFACE )
 
-#-------------------------------------------------------------------------------
-# SUBPROJECT configuration
-#-------------------------------------------------------------------------------
-project(${BS_PROJECT_NAME}-data LANGUAGES NONE)
+target_include_directories( ${PROJECT_NAME}
+  INTERFACE $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include> )
 
-cmake_policy(SET CMP0079 NEW)
-
-#-------------------------------------------------------------------------------
-# LIBRARY configuration
-#-------------------------------------------------------------------------------
-add_library(${PROJECT_NAME} INTERFACE)
-
-target_link_libraries(${BS_PROJECT_NAME} INTERFACE ${PROJECT_NAME})
-
-target_include_directories(${PROJECT_NAME} INTERFACE
-  $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include>
-)
+add_library( Efika::data ALIAS ${PROJECT_NAME} )
 
 #-------------------------------------------------------------------------------
 # Set data path
