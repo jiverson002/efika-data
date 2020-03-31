@@ -1,17 +1,18 @@
-cmake_minimum_required( VERSION 3.10 )
+# SPDX-License-Identifier: MIT
+cmake_minimum_required(VERSION 3.14)
 
 # Subproject of efika
-project( efika-data LANGUAGES NONE )
+project(efika-data LANGUAGES NONE)
 
 #-------------------------------------------------------------------------------
 # COMPONENT configuration
 #-------------------------------------------------------------------------------
-add_library( ${PROJECT_NAME} INTERFACE )
+add_library(${PROJECT_NAME} INTERFACE)
 
-target_include_directories( ${PROJECT_NAME}
-  INTERFACE $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include> )
+target_include_directories(${PROJECT_NAME}
+  INTERFACE $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include>)
 
-add_library( Efika::data ALIAS ${PROJECT_NAME} )
+add_library(Efika::data ALIAS ${PROJECT_NAME})
 
 #-------------------------------------------------------------------------------
 # Set data path
