@@ -5,8 +5,8 @@
 #cmakedefine EFIKA_DATA_PATH "@EFIKA_DATA_PATH@"
 
 static char const *EFIKA_datasets[] = {
-  "16384.5d",
-  "65536.5d",
+  "16384.5d.clu",
+  "65536.5d.clu",
 };
 
 #endif /* EFIKA_DATA_H */
