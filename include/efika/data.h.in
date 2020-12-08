@@ -5,9 +5,9 @@
 #cmakedefine EFIKA_DATA_PATH "@EFIKA_DATA_PATH@"
 
 static char const *EFIKA_datasets[] = {
-  "bms_pos.clu",
+  //"bms_pos.clu",
   "example.clu",
-  "groceries.clu",
+  //"groceries.clu",
   "rcv1_10k.clu",
   "sports_1x1.clu",
   "youtube.clu",
